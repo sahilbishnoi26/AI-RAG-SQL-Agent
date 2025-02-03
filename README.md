@@ -1,5 +1,3 @@
-This project demonstrates how to build an **agentic system** using **Large Language Models (LLMs)** to interact with multiple databases and utilize various tools. It features **SQL agents** for querying large databases efficiently. T
-
 # Ask-Your-Database-3.0 – AI Chatbot with Intelligent Tool Selection  
 
 ## Overview  
