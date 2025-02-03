@@ -7,12 +7,6 @@ This project demonstrates how to build an agentic system using Large Language Mo
 
 ---
 
-## Video Explanation: 
-A detailed explanation of the project is available in the following YouTube video:
-
-
----
-
 ## Requirements
 
 - **Operating System:** Linux or Windows (Tested on Windows 11 with Python 3.9.11)
