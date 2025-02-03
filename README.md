@@ -10,7 +10,6 @@ This project demonstrates how to build an agentic system using Large Language Mo
 ## Video Explanation: 
 A detailed explanation of the project is available in the following YouTube video:
 
-Automating LLM Agents to Chat with Multiple/Large Databases (Combining RAG and SQL Agents): [Link](https://youtu.be/xsCedrNP9w8?si=v-3k-BoDky_1IRsg)
 
 ---
 
