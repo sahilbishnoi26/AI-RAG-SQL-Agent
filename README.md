@@ -1,107 +1,113 @@
-
----
-
 # AI Agent Q&A and RAG System for Chatting with Multiple Databases
 
-This project demonstrates how to build an agentic system using Large Language Models (LLMs) that can interact with multiple databases and utilize various tools. It highlights the use of SQL agents to efficiently query large databases. The key frameworks used in this project include OpenAI, LangChain, LangGraph, LangSmith, and Gradio. The end product is an end-to-end chatbot, designed to perform these tasks, with LangSmith used to monitor the performance of the agents.
+This project demonstrates how to build an **agentic system** using **Large Language Models (LLMs)** to interact with multiple databases and utilize various tools. It features **SQL agents** for querying large databases efficiently. The chatbot is built using **OpenAI, LangChain, LangGraph, LangSmith, and Gradio**, with **LangSmith** used for monitoring agent performance.
 
 ---
 
-## Requirements
+## System Requirements
+- **Operating System:** Linux or Windows (**Tested on Windows 11 with Python 3.9.11**)
+- **OpenAI API Key:** Required for **GPT functionality**.
+- **Tavily API Key:** Required for **search tools** (**Free from Tavily profile**).
+- **LangChain API Key:** Required for **LangSmith monitoring** (**Free from LangChain profile**).
+- **Dependencies:** Provided in the `requirements.txt` file.
 
-- **Operating System:** Linux or Windows (Tested on Windows 11 with Python 3.9.11)
-- **OpenAI API Key:** Required for GPT functionality.
-- **Tavily Credentials:** Required for search tools (Free from your Tavily profile).
-- **LangChain Credentials:** Required for LangSmith (Free from your LangChain profile).
-- **Dependencies:** The necessary libraries are provided in `requirements.txt` file.
 ---
 
 ## Installation and Execution
 
-To set up the project, follow these steps:
+### **1. Clone the Repository**
+```
+git clone <repo_address>
+```
 
-1. Clone the repository:
-   ```bash
-   git clone <repo_address>
-   ```
-2. Install Python and create a virtual environment:
-   ```bash
-   python -m venv venv
-   ```
-3. Activate the virtual environment:
-   - On Windows:
-     ```bash
-     venv\Scripts\activate
-     ```
-   - On Linux/macOS:
-     ```bash
-     source venv/bin/activate
-     ```
-4. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-5. Download the travel sql database from this link and paste it into the `data` folder.
+### **2. Create and Activate a Virtual Environment**
+```
+python -m venv venv
+```
 
-6. Download the chinook SQL database from this link and paste it into the `data` folder.
+#### **On Windows:**
+```
+venv\Scripts\activate
+```
 
-7. Prepare the `.env` file and add your `OPEN_AI_API_KEY`, `TAVILY_API_KEY`, and `LANGCHAIN_API_KEY`.
+#### **On Linux/macOS:**
+```
+source venv/bin/activate
+```
 
-8. Run `prepare_vector_db.py` module once to prepare both vector databases.
-   ```bash
-   python src\prepare_vector_db.py
-   ```
-9. Run the app:
-   ```bash
-   python src\app.py
-   ```
-Open the Gradio URL generated in the terminal and start chatting.
+### **3. Install Dependencies**
+```
+pip install -r requirements.txt
+```
 
-*Sample questions are available in `sample_questions.txt`.*
+### **4. Download and Add SQL Databases**
+- **Travel SQL Database:** Download from [Kaggle](https://www.kaggle.com/code/mpwolke/airlines-sqlite) and place it in the `data` folder.
+- **Chinook SQL Database:** Download from [this link](https://database.guide/2-sample-databases-sqlite/) and place it in the `data` folder.
+
+### **5. Configure API Keys**
+Prepare the `.env` file and add:
+```
+OPEN_AI_API_KEY=<your_key>
+TAVILY_API_KEY=<your_key>
+LANGCHAIN_API_KEY=<your_key>
+```
+
+### **6. Prepare Vector Databases**
+Run the following command **once** to set up the vector databases:
+```
+python src/prepare_vector_db.py
+```
+
+### **7. Start the Chatbot**
+Launch the chatbot by running:
+```
+python src/app.py
+```
+
+Open the **Gradio URL** generated in the terminal to start chatting.
 
 ---
 
-### Using Your Own Database
+## Using Your Own Database
 
-To use your own data:
-1. Place your data in the `data` folder.
-2. Update the configurations in `tools_config.yml`.
-3. Load the configurations in `src\agent_graph\load_tools_config.py`.
+### **1. Add Your Data**
+- Place your **SQL, CSV, or XLSX** files in the `data` folder.
 
-For unstructured data using Retrieval-Augmented Generation (RAG):
-1. Run the following command with your data directory's configuration:
-   ```bash
-   python src\prepare_vector_db.py
-   ```
+### **2. Configure the Database Connection**
+- Update `tools_config.yml` with your database settings.
 
-All configurations are managed through YAML files in the `configs` folder, loaded by `src\chatbot\load_config.py` and `src\agent_graph\load_tools_config.py`. These modules are used for a clean distribution of configurations throughout the project.
+### **3. Load the Configurations**
+- Ensure configurations are correctly loaded in:
+  - `src/agent_graph/load_tools_config.py`
+  - `src/chatbot/load_config.py`
 
-Once your databases are ready, you can either connect the current agents to the databases or create new agents. More details can be found in the accompanying YouTube video.
+### **4. Prepare Vector Databases for RAG**
+```
+python src/prepare_vector_db.py
+```
+
+After setup, the agents can interact with the databases or new agents can be created.
 
 ---
 
 ## Project Schemas
 
-### High-level overview
-
+### **High-Level Overview**
 <div align="center">
   <img src="images/high-level.png" alt="high-level">
 </div>
 
-### Detailed Schema
-
+### **Detailed Schema**
 <div align="center">
   <img src="images/detailed_schema.png" alt="detailed_schema">
 </div>
 
-### Graph Schema
-
+### **Graph Schema**
 <div align="center">
   <img src="images/graph_image.png" alt="graph_image">
 </div>
 
-### SQL-agent for large databases strategies
-
+### **SQL-Agent Strategies for Large Databases**
 <div align="center">
   <img src="images/large_db_strategy.png" alt="large_db_strategy">
 </div>
@@ -109,7 +115,6 @@ Once your databases are ready, you can either connect the current agents to the 
 ---
 
 ## Chatbot User Interface
-
 <div align="center">
   <img src="images/UI.png" alt="ChatBot UI">
 </div>
@@ -117,7 +122,6 @@ Once your databases are ready, you can either connect the current agents to the 
 ---
 
 ## LangSmith Monitoring System
-
 <div align="center">
   <img src="images/langsmith.png" alt="langsmith">
 </div>
@@ -125,19 +129,17 @@ Once your databases are ready, you can either connect the current agents to the 
 ---
 
 ## Databases Used
-
 - **Travel SQL Database:** [Kaggle Link](https://www.kaggle.com/code/mpwolke/airlines-sqlite)
 - **Chinook SQL Database:** [Sample Database](https://database.guide/2-sample-databases-sqlite/)
-- **stories VectorDB**
+- **Stories VectorDB**
 - **Airline Policy FAQ VectorDB**
+
 ---
 
 ## Key Frameworks and Libraries
-
 - **LangChain:** [Introduction](https://python.langchain.com/docs/get_started/introduction)
 - **LangGraph**
 - **LangSmith**
 - **Gradio:** [Documentation](https://www.gradio.app/docs/interface)
-- **OpenAI:** [Developer Quickstart](https://platform.openai.com/docs/quickstart?context=python)
+- **OpenAI API:** [Developer Quickstart](https://platform.openai.com/docs/quickstart?context=python)
 - **Tavily Search**
----
