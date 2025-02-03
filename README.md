@@ -4,7 +4,7 @@
 Ask-Your-Database-3.0 is an AI-powered chatbot that intelligently selects the right tool—retrieving information from documents, querying SQL databases, or searching the web—based on user queries. It enables seamless natural language interaction with structured and unstructured data, ensuring relevant and accurate responses.  
 
 ## Features  
-- **Retrieval-Augmented Generation (RAG)**: Stores and retrieves unstructured PDFs and documents using [ChromaDB](https://github.com/chroma-core/chroma) as a vector database, providing context-aware responses.  
+- **Retrieval-Augmented Generation (RAG)**: Stores and retrieves unstructured PDFs and documents using ChromaDB as a vector database, providing context-aware responses.  
 - **SQL Query Generation**: Converts natural language queries into SQL, retrieves data from linked databases, and presents results in a human-readable format.  
 - **Real-Time Web Search**: Integrates online search to answer queries beyond the chatbot’s existing knowledge or available datasets.  
 - **Dynamic Tool Selection**: Automatically determines the best method (document retrieval, SQL query, or web search) based on user input.  
