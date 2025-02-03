@@ -1,4 +1,4 @@
-# AI Agent Q&A and RAG System for Chatting with Multiple Databases
+# Ask-Your-Database-3.0: AI Agent Q&A and RAG System for Chatting with Multiple Databases
 
 This project demonstrates how to build an **agentic system** using **Large Language Models (LLMs)** to interact with multiple databases and utilize various tools. It features **SQL agents** for querying large databases efficiently. The chatbot is built using **OpenAI, LangChain, LangGraph, LangSmith, and Gradio**, with **LangSmith** used for monitoring agent performance.
 
